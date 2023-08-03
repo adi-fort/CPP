@@ -6,7 +6,7 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:34:08 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/02 12:00:21 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/08/03 17:25:59 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PHONEBOOK_HPP
@@ -21,15 +21,17 @@ class PhoneBook
 {
 	public:
 		
+		PhoneBook();
+		~PhoneBook();
+
 		void	add_contact();
-		void	search_contact();
-		void	replace_last();
+		void	replace_first();
 		void	display_contacts();
-		void	display_ind_contact();
 
 	private:
 		
 		Contact	_contacts[8];
+		int		_index;
 };
 
 #endif

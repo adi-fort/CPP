@@ -6,16 +6,18 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:12:39 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/03 16:20:17 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/08/04 11:44:15 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
+//la classe é il set di istruzione che definisce gli oggetti.
+
 int	main()
 {
-	PhoneBook	phoneBook;
+	PhoneBook	phoneBook; //PhoneBook é la classe; phoneBook é istanza
 	std::string	input = 0;
 
 	while (input != "EXIT")
@@ -24,9 +26,9 @@ int	main()
 		std::getline(std::cin, input); 
 		if (input == "ADD")
 		{
-			add_contact();
+			phoneBook.add_contact();
 			if (phonebook._index > 8)
-				replace_first();
+				phoneBook.replace_first();
 		}
 		else if (input == "SEARCH")
 			dislpay_contacts();

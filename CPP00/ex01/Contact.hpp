@@ -6,12 +6,12 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:53:07 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/03 16:20:12 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/08/04 12:10:58 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
-#define CONTACT_HPP
+# define CONTACT_HPP
 
 class Contact {
 	

@@ -6,7 +6,7 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:12:11 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/03 17:14:06 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/08/04 12:10:30 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	set_nick_name(std::string last_name)
 
 void	set_phone_number(std::string phone_number)
 {
+	if (ft_not_number(phone_book))
+		return ;
 	this ->_phone_number = phone_number;
 	return ;
 }

@@ -6,12 +6,12 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:12:11 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/04 16:04:40 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/08/04 17:11:48 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-# include "utils.cpp"
+# include "utils.hpp"
 
 Contact::Contact()
 {
@@ -30,19 +30,19 @@ Contact::~Contact()
 
 void	Contact::set_first_name(std::string first_name)
 {
-	this ->_first_name = _first_name;
+	this ->_first_name = first_name;
 	return ;
 }
 
 void	Contact::set_last_name(std::string last_name)
 {
-	this ->_last_name = _last_name;
+	this ->_last_name = last_name;
 	return ;
 }
 
 void	Contact::set_nick_name(std::string nick_name)
 {
-	this ->_nick_name = _nick_name;
+	this ->_nick_name = nick_name;
 	return ;
 }
 
@@ -50,13 +50,13 @@ void	Contact::set_phone_number(std::string phone_number)
 {
 	if (ft_not_number(phone_number))
 		exit(1);
-	this ->_phone_number = _phone_number;
+	this ->_phone_number = phone_number;
 	return ;
 }
 
 void	Contact::set_darkest_secret(std::string darkest_secret)
 {
-	this ->_darkest_secret = _darkest_secret;
+	this ->_darkest_secret = darkest_secret;
 	return ;
 }
 

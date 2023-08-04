@@ -6,7 +6,7 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:12:39 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/04 16:11:22 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/08/04 17:08:58 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int	main()
 {
-	PhoneBook	phoneBook; //PhoneBook é la classe; phoneBook é istanza
+	PhoneBook	phoneBook;
 	std::string	input = "";
 	while (input != "EXIT")
 	{
@@ -33,6 +33,8 @@ int	main()
 		}
 		else if (input == "SEARCH")
 			phoneBook.display_contacts();
+		else if (input == "EXIT")
+			;
 		else 
 			std::cout << "error: invalid input\n";
 	}

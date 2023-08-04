@@ -6,7 +6,7 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:12:26 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/04 17:44:02 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/08/04 18:15:27 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 PhoneBook::PhoneBook()
 {
 	this->_index = 0;
+	this->_saved_contact = 0;
 	return ;
 }
 
@@ -62,6 +63,8 @@ void	PhoneBook::add_contact()
 	this->_index++;
 	if (this->_index == 8)
 		this->_index = 0;
+	if (this->_saved_contact < 8)
+		this->_saved_contact++;
 }
 
 void	PhoneBook::display_contacts()
@@ -70,7 +73,7 @@ void	PhoneBook::display_contacts()
 	int ind_input = 0;
 	std::string input;
 	std::string input_index_char;
-	while (i < this->_index)
+	while (i < this->_saved_contact)
 	{
 		std::cout << std::setfill(' ') << std::setw(10);
 		std::cout << i + 1 ;
@@ -92,22 +95,24 @@ void	PhoneBook::display_contacts()
 	std::cout << "$> Insert index: " ;
 	std::getline(std::cin, input_index_char);
 	ind_input = atoi(input_index_char.c_str());
-	if (ind_input < 1 || ind_input >= this->_index + 1)
-	{
-		std::cout << "Invalid input" ;
-		exit(1);
-	}
+	if (ind_input < 1 || ind_input > this->_saved_contact)
+		std::cout << "Invalid input\n" ;
 	else
 	{
 		ind_input-- ;
+		std::cout << "Name:			" ; 
 		std::cout << this->_contacts[ind_input].get_first_name();
 		std::cout << std::endl;
+		std::cout << "Last name:		" ; 
 		std::cout << this->_contacts[ind_input].get_last_name();
 		std::cout << std::endl;
+		std::cout << "Nick name:		" ; 
 		std::cout << this->_contacts[ind_input].get_nick_name();
 		std::cout << std::endl;
+		std::cout << "Number:			" ; 
 		std::cout << this->_contacts[ind_input].get_phone_number();
 		std::cout << std::endl;
+		std::cout << "Darkest secret:		" ; 
 		std::cout << this->_contacts[ind_input].get_darkest_secret();
 		std::cout << std::endl;
 	}

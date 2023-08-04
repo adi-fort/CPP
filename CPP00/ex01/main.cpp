@@ -6,7 +6,7 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:12:39 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/04 17:08:58 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/08/04 17:24:04 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	main()
 {
 	PhoneBook	phoneBook;
 	std::string	input = "";
+	std::cout << "Hi, i am a Crappy Old Phone Book\n" ;
+	std::cout << "You can only input ADD, SEARCH or EXIT!\n" ;
 	while (input != "EXIT")
 	{
 		std::cout << "$> ";

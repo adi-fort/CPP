@@ -6,7 +6,7 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:12:26 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/04 17:07:29 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/08/04 17:24:50 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,27 @@ int		PhoneBook::get_index() const
 void	PhoneBook::add_contact()
 {	
 	std::string	input;
-	std::cout << "You have to enter in order: First name, last name, ";
-	std::cout << "nickname, phone number and darkest secret. "; 
-	std::cout << "Don't forget to press Enter after every input!\n";
+	std::cout << "Enter first name: " ;
 	std::getline(std::cin, input);
 	if (!input[0])
 		exit(1);
 	this->_contacts[this->_index].set_first_name(input);
+	std::cout << "Enter last name: " ;
 	std::getline(std::cin, input);
 	if (!input[0])
 		exit(1);
 	this->_contacts[this->_index].set_last_name(input);
+	std::cout << "Enter nick name: " ;
 	std::getline(std::cin, input);
 	if (!input[0])
 		exit(1);
 	this->_contacts[this->_index].set_nick_name(input);
+	std::cout << "Enter phone number (only numbers): " ;
 	std::getline(std::cin, input);
 	if (!input[0])
 		exit(1);
 	this->_contacts[this->_index].set_phone_number(input);
+	std::cout << "Enter the darkest secret: " ;
 	std::getline(std::cin, input);
 	if (!input[0])
 		exit(1);

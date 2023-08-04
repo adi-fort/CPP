@@ -6,20 +6,20 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 12:09:59 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/04 14:48:46 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/08/04 15:45:35 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
 
-void	ft_not_number(std::string phone_number)
+int		ft_not_number(std::string phone_number)
 {
 	int i = 0;
 
-	while(std::string[i])
+	while(phone_number[i])
 	{
-		if (std::string[i] < '0' || std::string[i] > '9') 
-		reutn (1);
+		if (phone_number[i] < '0' || phone_number[i] > '9') 
+			return (1);
 	}
 	return (0);
 }
@@ -27,6 +27,6 @@ void	ft_not_number(std::string phone_number)
 void	trunc_input(std::string input)
 {
 	int i = 0;
-	if (strlen(std::string[i]) > 9)
-		std::string[9] = '.';
+	if ((int)input.length() > 9)
+		input[9] = '.';
 }

@@ -6,12 +6,14 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:53:07 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/04 12:10:58 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/08/04 16:03:50 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
+
+# include <string>
 
 class Contact {
 	
@@ -23,10 +25,10 @@ class Contact {
 		void	set_nick_name(std::string nick_name);
 		void	set_phone_number(std::string phone_number);
 		void	set_darkest_secret(std::string darkest_secret);
-		std::string	get_firts_name() const;
+		std::string	get_first_name() const;
 		std::string	get_last_name() const;
 		std::string	get_nick_name() const;
-		std::string	get_darkest_secrete() const;
+		std::string	get_darkest_secret() const;
 		std::string	get_phone_number() const;
 
 	private: 

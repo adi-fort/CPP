@@ -6,11 +6,12 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:12:26 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/04 15:07:01 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/08/04 16:16:21 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "utils.hpp"
 
 PhoneBook::PhoneBook()
 {
@@ -18,12 +19,17 @@ PhoneBook::PhoneBook()
 	return ;
 }
 
-~PhoneBook::PhoneBook()
+PhoneBook::~PhoneBook()
 {
 	return ;
 }
 
-void	add_contact()
+int		PhoneBook::get_index() const
+{
+	return (this->_index);
+}
+
+void	PhoneBook::add_contact()
 {	
 	std::string	input;
 	this->_index++;
@@ -44,27 +50,27 @@ void	add_contact()
 	if (!input)
 		exit(1);
 	trunc_input(input);
-	this->_contacts[index]->_index.set_nick_name(input);
+	this->_contacts[this->_index]->_index.set_nick_name(input);
 	std::getline(std::cin, input);
 	if (!input)
 		exit(1);
 	trunc_input(input);
-	this->contacts[index]->_index.set_phone_number(input);
+	this->contacts[this->_index]->_index.set_phone_number(input);
 	std::getline(std::cin, input);
 	if (!input)
 		exit(1);
 	trunc_input(input);
-	this->contacts[index]->_index.set_darkest_secret(input);
+	this->contacts[this->_index]->_index.set_darkest_secret(input);
 	std::cout << "Contact succesfully added!"
 }
 
-void	replace_first()
+void	PhoneBook::replace_first()
 {
 	if (this->_index == 8)
 		this->_contacts[8] == this->_Contact[0];
 }
 
-void	display_contacts()
+void	PhoneBook::display_contacts()
 {
 	int i = 1;
 	int ind_input = 0;
@@ -98,20 +104,21 @@ void	display_contacts()
 	}
 	else
 	{
+		this->_index = ind_input;
 		std::cout << std::setfill(' ') << std::setw(10);
-		std::cout << this->_contacts[this->_ind_input].get_first_name();
+		std::cout << this->_contacts[this->_index].get_first_name();
 		std::cout << std::endl;
 		std::cout << std::setfill(' ') << std::setw(10);
-		std::cout << this->_contacts[this->_ind_input].get_last_name();
+		std::cout << this->_contacts[this->_index].get_last_name();
 		std::cout << std::endl;
 		std::cout << std::setfill(' ') << std::setw(10);
-		std::cout << this->_contacts[this->_ind_input].get_nick_name();
+		std::cout << this->_contacts[this->_index].get_nick_name();
 		std::cout << std::endl;
 		std::cout << std::setfill(' ') << std::setw(10);
-		std::cout << this->_contacts[this->_ind_input].get_phone_number();
+		std::cout << this->_contacts[this->_index].get_phone_number();
 		std::cout << std::endl;
 		std::cout << std::setfill(' ') << std::setw(10);
-		std::cout << this->_contacts[this->_ind_input].get_darkest_secret();
+		std::cout << this->_contacts[this->_index].get_darkest_secret();
 		std::cout << std::endl;
 	}
 }

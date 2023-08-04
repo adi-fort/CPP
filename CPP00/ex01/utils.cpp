@@ -6,7 +6,7 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 12:09:59 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/04 16:57:20 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/08/04 17:39:26 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ int		ft_not_number(std::string phone_number)
 	return (0);
 }
 
-void	trunc_input(std::string &input)
+std::string	trunc_input(std::string input)
 {
-	int i = 0;
-	if ((int)input.length() > 9)
+	if ((int)input.length() > 9) {
 		input[9] = '.';
+		input.resize(10);
+	}
+	return (input) ;
 }

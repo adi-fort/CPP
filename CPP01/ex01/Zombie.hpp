@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 17:39:42 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/31 16:46:28 by adi-fort         ###   ########.fr       */
+/*   Created: 2023/08/30 17:24:15 by adi-fort          #+#    #+#             */
+/*   Updated: 2023/08/31 16:09:17 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include <string>
-#include <iostream>
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+# include <iostream>
+# include <string>
 
-int main()
+class Zombie
 {
-	Zombie	*zombs;
+	public:
 
-	zombs = zombieHorde(10, "A walking dead");
-	delete [] zombs;
-	return (0);
-}
+		Zombie();
+		Zombie(std::string name);
+		~Zombie();
+		
+		void	announce(void);
+		void	set_name(std::string name);
+
+	private:
+
+		std::string _name;
+};
+	
+Zombie	*zombieHorde(int N, std::string name);
+
+#endif

@@ -1,5 +1,5 @@
-NAME: Sed
-SRC		= $(wildcard *.cpp)
+NAME	= Sed
+SRC		= main.cpp
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -f
 CC		= g++ ${FLAGS}

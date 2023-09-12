@@ -34,5 +34,12 @@ void	error(void)
 
 void	complain(std::string level)
 {
+	void Harl::*fn_levels[4]();
+
+	fn_level[0] = &Harl::debug();
+	fn_level[1] = &Harl::info();
+	fn_level[2] = &Harl::warning();
+	fn_level[3] = &Harl::error();
+
 	
 }

@@ -6,15 +6,15 @@ FLAGS	= -Wall -Werror -Wextra -std=c++98
 
 RM		= rm -f
 
-CC		= g++ ${FLAGS}
+CC		= g++ $(FLAGS)
 
-OBJ		= ${SRC:.cpp=.o}
+OBJ		= $(SRC:.cpp=.o)
 
-.o:.cpp
+%.o:%.cpp
 	$(CC) $(FLAGS) -c $< -o $(<:.cpp=.o)
 
 $(NAME): $(OBJ)
-	$(CC) $(FALGS) $(OBJ) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 

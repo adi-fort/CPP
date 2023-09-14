@@ -5,7 +5,7 @@ RM		= rm -f
 CC		= g++ ${FLAGS}
 OBJ		= ${SRC:.cpp=.o}
 
-.o:.cpp
+%.o:%.cpp
 	$(CC) $(FLAGS) -c $< -o $(<:.cpp=.o)
 
 $(NAME): $(OBJ)

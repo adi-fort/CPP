@@ -6,13 +6,16 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:12:11 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/08/04 18:00:19 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:28:53 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "utils.hpp"
 #include <iostream> 
+#include <stdio.h>
+#include <stdlib.h>
+
 
 Contact::Contact()
 {
@@ -49,9 +52,11 @@ void	Contact::set_nick_name(std::string nick_name)
 
 void	Contact::set_phone_number(std::string phone_number)
 {
-	if (ft_not_number(phone_number)) {
+	if (ft_not_number(phone_number)) 
+	{
 		std::cout << "Told Ya! Bye!\n" ;
-		exit (1); }
+		exit(1); 
+	}
 	this ->_phone_number = phone_number;
 	return ;
 }

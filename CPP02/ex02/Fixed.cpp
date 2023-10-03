@@ -5,14 +5,14 @@
 
 const int Fixed::_fractional = 8;
 
-Fixed::Fixed()
+Fixed::Fixed(): _integer(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+//	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int x)
 {
-	std::cout << "Int constructor called" << std::endl;
+//	std::cout << "Int constructor called" << std::endl;
 	this->setRawBits(x << 8);
 }
 
@@ -21,7 +21,7 @@ Fixed::Fixed(const float y)
 	int	int_part;
 	float	fract_part;
 
-	std::cout << "Float constructor called" << std::endl;
+//	std::cout << "Float constructor called" << std::endl;
 	int_part = (int)roundf(y) << 8;
 	fract_part = y - roundf(y);
 	int_part += (int)roundf(fract_part * 256.0);
@@ -30,18 +30,18 @@ Fixed::Fixed(const float y)
 
 Fixed::Fixed(const Fixed& b)
 {
-	std::cout << "Copy constructor called" << std::endl;
+//	std::cout << "Copy constructor called" << std::endl;
 	*this = b;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+//	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed&	Fixed::operator=(const Fixed& b)
 {
-	 std::cout << "Copy assignment operator called" << std::endl;
+//	 std::cout << "Copy assignment operator called" << std::endl;
 	 if (this != &b)
 	 {
 	 	this->setRawBits(b.getRawBits());
@@ -124,11 +124,11 @@ bool	Fixed::operator!=(const Fixed& num)	const
 	return (false);
 }
 
-Fixed	Fixed::operator+(const	Fixed& num)	const;
+Fixed	Fixed::operator+(const	Fixed& num)	const
 {
 	Fixed	res;
 	
-	res.setRawBist(this->getRawBits() + num.getRawBits());
+	res.setRawBits(this->getRawBits() + num.getRawBits());
 	return (res);
 }
 
@@ -157,4 +157,54 @@ Fixed	Fixed::operator/(const	Fixed& num)	const
 	return (res);
 }
 
+Fixed	Fixed::operator++(int)
+{
+	Fixed	delta; //variabile = 0.0039
+	Fixed	temp; // variabile di supporto
 
+	delta.setRawBits(1); 
+	temp = *this; // assegno il valore del numero a una temp
+	*this = (*this + delta); //aggiungo(grazie a + definito sui Fixed)
+	return (temp); //ritorno la temp(che non ha subito incremento)
+}
+
+Fixed&	Fixed::operator++()
+{
+	Fixed delta; //00.39
+
+	delta.setRawBits(1); 
+	*this = *this + delta; //incremento
+	return (*this); //ritorno la variabile incrementata
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	delta; //variabile = 0.0039
+	Fixed	temp; // variabile di supporto
+
+	delta.setRawBits(1); 
+	temp = *this; // assegno il valore del numero a una temp
+	*this = *this - delta; //detraggo(grazie a + definito sui Fixed)
+	return (temp); //ritorno la temp(che non ha subito decremento)
+}
+
+Fixed&	Fixed::operator--()
+{
+	Fixed delta; //00.39
+
+	delta.setRawBits(1); 
+	*this = (*this - delta); //decremento
+	return (*this); //ritorno la variabile decrementata
+}
+
+static Fixed&		min(Fixed& a, Fixed& b)
+{}
+		
+static const Fixed&	min(const Fixed& a, const Fixed& b)
+{}
+
+static Fixed&		max(Fixed& a, Fixed& b)
+{}
+
+static const Fixed&	max(const Fixed& a, const Fixed& b)
+{}

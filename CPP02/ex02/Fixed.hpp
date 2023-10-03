@@ -33,8 +33,8 @@ class	Fixed
 		Fixed	operator*(const	Fixed& num)	const;
 		Fixed	operator/(const	Fixed& num)	const;
 		
-		Fixed&	operator++();
-		Fixed	operator++(int);
+		Fixed&	operator++(); //prima incrementa poi ritorna il valore++
+		Fixed	operator++(int);//ritorna il valore non incrementato
 		Fixed&	operator--();
 		Fixed	operator--(int);
 

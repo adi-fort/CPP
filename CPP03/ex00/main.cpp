@@ -3,12 +3,14 @@
 
 int main()
 {
-	ClapTrap	andrea;
-	ClapTrap	mario;
+	ClapTrap andrea("andrea");
+	ClapTrap mario("mario");
 
-	andrea.attack(ClapTrap::mario);
-	andrea.attack(ClapTrap::mario);
-	mario.beRepaired(3);
-	
+	andrea.attack(mario.getName());
+	mario.setHealth(mario.getHealth());
+	andrea.setHealth(andrea.getHealth());
+	mario.beRepaired(1);
+	std::cout << andrea.getEnergy() << std::endl << mario.getEnergy() << std::endl;
+
 	return (0);
 }

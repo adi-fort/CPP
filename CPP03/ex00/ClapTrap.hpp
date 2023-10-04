@@ -20,12 +20,12 @@ class ClapTrap
 		~ClapTrap();
 		ClapTrap& operator=(const ClapTrap& obj);
 
-		void	setName(const std::string& _name);
-		void	setHealth(unsigned int _health);
-		void	setEnergy(unsigned int _energy);
-		void	setDamage(unsigned int _damage);
+		void	setName(const std::string name);
+		void	setHealth(unsigned int health);
+		void	setEnergy(unsigned int energy);
+		void	setDamage(unsigned int damage);
 		
-		const std::string&	getName() const;
+		std::string			getName() const;
 		unsigned int		getHealth() const;
 		unsigned int		getEnergy() const;
 		unsigned int		getDamage() const;

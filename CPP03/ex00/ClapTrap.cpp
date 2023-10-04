@@ -1,28 +1,28 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap()
+ClapTrap::ClapTrap()
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string name)
 {
-	std::string << "ClapTrap created" << st::endl;
-	this->_name = name;
+	std::cout << "ClapTrap created" << std::endl;
+	this->setName(name);
 	this->setHealth(10);
 	this->setEnergy(10);
 	this->setDamage(0);
 }
 
-ClapTrap(ClapTrap& obj)
+ClapTrap::ClapTrap(ClapTrap& obj)
 {
 	std::cout << "Default copy constructor called" << std::endl;
-	this->_name = name;
+	this->_name = obj.getName();
 	*this = obj;
 }
 
-~ClapTrap()
+ClapTrap::~ClapTrap()
 {
 	std::cout << "Default destructor called" << std::endl;
 }
@@ -31,7 +31,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& obj)
 {
 	if (this != &obj)
 	{
-		this->setName(obj.getName());
+		this->_name = (obj._name);
 		this->setHealth(obj.getHealth());
 		this->setEnergy(obj.getEnergy());
 		this->setDamage(obj.getDamage());
@@ -40,13 +40,54 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& obj)
 	return (*this);
 }
 
+void	ClapTrap::setName(const std::string name)
+{
+	this->_name = name;
+}
+
+void	ClapTrap::setHealth(unsigned int health)
+{
+	this->_health = health;
+}
+
+void	ClapTrap::setEnergy(unsigned int energy)
+{
+	this->_energy = energy;
+}
+
+void	ClapTrap::setDamage(unsigned int damage)
+{
+	this->_damage = damage;
+}
+
+std::string	ClapTrap::getName() const
+{
+	return (this->_name);
+}
+
+unsigned int	ClapTrap::getHealth() const
+{
+	return (this->_health);
+}
+
+unsigned int	ClapTrap::getEnergy() const
+{
+	return (this->_energy);
+}
+
+unsigned int	ClapTrap::getDamage() const
+{
+	return (this->_damage);
+}
+
 void	ClapTrap::attack(const std::string& target)
 {
-	if (this->_energy > 0 && this->health > 0)
+	if (this->_energy > 0 && this->_health > 0)
 	{
-		std::cout << "ClapTrap" << this->_name << "attacks"  << target << "causing points of damage: " << this->_damage << std::endl;
-		ClapTrap::target.setHealth(getHealt() - this->_damage);
-		this->setHealth(this->getHealth() - 1);
+		std::cout << "ClapTrap " << this->_name << " attacks " 
+		<< target << " causing points of damage: " << this->_damage <<
+		std::endl;
+		this->_energy--;
 	}
 	else
 		std::cout << "ClapTrap has no energy nor health" << std::endl;

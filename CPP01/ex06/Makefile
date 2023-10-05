@@ -6,7 +6,7 @@ FLAGS	= -Wall -Werror -Wextra -std=c++98
 
 RM		= rm -f
 
-CC		= g++ $(FLAGS)
+CC		= c++
 
 OBJ		= $(SRC:.cpp=.o)
 

@@ -2,8 +2,8 @@ NAME	= BraiiiiiiinnnzzzZ
 SRC		= $(wildcard *.cpp)
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -f
-CC		= g++ ${FLAGS}
-OBJ		= ${SRC:.cpp=.o}
+CC		= c++
+OBJ		= $(SRC:.cpp=.o)
 
 %.o:%.cpp
 	$(CC) $(FLAGS) -c $< -o $(<:.cpp=.o)

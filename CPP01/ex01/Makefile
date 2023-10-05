@@ -2,7 +2,7 @@ NAME	= Horde
 SRC		= $(wildcard *.cpp)
 FLAGS	= -Werror -Wall -Wextra -std=c++98
 RM		= rm -f
-CC		= g++ ${FLAGS}
+CC		= c++
 OBJ		= ${SRC:.cpp=.o}
 
 %.o:%.cpp

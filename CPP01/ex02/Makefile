@@ -2,7 +2,7 @@ NAME	= Brain
 SRC		= main.cpp
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -f
-CC		= g++ ${FLAGS}
+CC		= c++
 OBJ		= ${SRC:.cpp=.o}
 
 %.o:%.cpp

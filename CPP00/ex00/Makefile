@@ -2,7 +2,7 @@ NAME	= megaphone
 SRC		= megaphone.cpp
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -f
-CC		= g++ ${FLAGS}
+CC		= c++
 OBJ		= ${SRC:.cpp=.o}
 
 %.o:%.cpp
@@ -17,6 +17,6 @@ clean:
 	$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(OBJ)
+	$(RM) $(NAME)
 
 re: fclean all

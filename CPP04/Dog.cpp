@@ -2,6 +2,8 @@
 
 Dog::Dog() : Animal("Dog")
 {
+	std::cout << "Dog Created";
+	std::cout << std::endl;
 }
 
 Dog::~Dog()

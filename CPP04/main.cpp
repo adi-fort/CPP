@@ -36,7 +36,11 @@ int main()
 	w->makeSound();
 	std::cout << std::endl;
 	
-
+	delete p;
+	delete h;
+	delete d;
+	delete c;
+	delete w;
 	
 	return (0);
 }

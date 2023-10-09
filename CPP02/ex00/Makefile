@@ -6,7 +6,7 @@ SRC	= main.cpp Fixed.cpp
 
 RM	= rm -f
 
-CC	= g++ $(FLAGS)
+CC	= c++
 
 OBJ	= $(SRC:.cpp=.o)
 
@@ -18,7 +18,7 @@ $(NAME): $(OBJ)
 
 all: $(NAME)
 
-claean:
+clean:
 	$(RM) $(OBJ)
 
 fclean: clean

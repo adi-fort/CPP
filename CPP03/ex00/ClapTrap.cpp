@@ -31,7 +31,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& obj)
 {
 	if (this != &obj)
 	{
-		this->_name = (obj._name);
+		this->setName(obj.getName());
 		this->setHealth(obj.getHealth());
 		this->setEnergy(obj.getEnergy());
 		this->setDamage(obj.getDamage());

@@ -11,8 +11,8 @@ ClapTrap::ClapTrap(std::string name)
 	std::cout << "ClapTrap created" << std::endl;
 	this->setName(name);
 	this->setHealth(100);
-	this->setEnergy(50);
-	this->setDamage(20);
+	this->setEnergy(100);
+	this->setDamage(30);
 }
 
 ClapTrap::ClapTrap(ClapTrap& obj)

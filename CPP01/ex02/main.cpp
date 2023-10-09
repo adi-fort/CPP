@@ -6,7 +6,7 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 17:01:31 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/10/05 17:02:20 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/10/09 11:52:01 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
 	std::cout << "string memory address: ";
 	std::cout << &string << std::endl;		//memory address string
 	std::cout << std::endl;	
-	std::cout << "pointer memory address: ";
+	std::cout << "pointer to memory address -> ";
 	std::cout << stringPTR << std::endl;	//memory address pointer
 	std::cout << std::endl;	
 	std::cout << "reference memory address: ";

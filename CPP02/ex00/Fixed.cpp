@@ -27,9 +27,9 @@ Fixed&	Fixed::operator=(const Fixed& b)
 	 return (*this);
 }
 
-void	Fixed::setRawBits(const int fract)
+void	Fixed::setRawBits(const int raw)
 {
-	this->_fp_num = fract;	
+	this->_fp_num = raw;	
 }
 
 int	Fixed::getRawBits() const

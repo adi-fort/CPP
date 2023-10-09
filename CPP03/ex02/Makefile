@@ -1,10 +1,10 @@
 NAME	= FragTrap
 
-SRC		= $(wildcard*.cpp)
+SRC		= ClapTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-CC		= g++ $(FLAGS)
+CC		= g++
 
 RM		= rm -f
 

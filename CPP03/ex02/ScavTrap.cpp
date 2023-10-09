@@ -6,11 +6,13 @@ ScavTrap::ScavTrap()
 }
 
 ScavTrap::~ScavTrap()
-{
+{	
+	std::cout << "ScavTrap destroyed" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string str): ClapTrap(str)
-{
+{	
+	std::cout << "ScavTrap created" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap& obj) : ClapTrap()

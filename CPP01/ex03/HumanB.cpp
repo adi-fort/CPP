@@ -6,7 +6,7 @@
 /*   By: adi-fort <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 17:46:39 by adi-fort          #+#    #+#             */
-/*   Updated: 2023/09/01 17:08:42 by adi-fort         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:09:25 by adi-fort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ void	HumanB::setWeapon(Weapon &weapon)
 void	HumanB::attack()
 {
 	if (!this->_weapon)
-		std::cout << this->_name << " can only pray\n";
+	{
+		std::cout << this->_name << " can only pray";
+		std::cout << std::endl;
+	}
 	else
 		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
 	return ;

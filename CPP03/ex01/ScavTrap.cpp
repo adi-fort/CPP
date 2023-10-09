@@ -9,13 +9,17 @@ ScavTrap::~ScavTrap()
 {
 }
 
-ScavTrap::ScavTrap(ScavTrap& obj)
+ScavTrap::ScavTrap(std::string str): ClapTrap(str)
 {
-	this->_name = obj._name;
+}
+
+ScavTrap::ScavTrap(ScavTrap& obj) : ClapTrap()
+{
+	this->_name = obj.getName();
 	*this = obj;
 }
 
-ScavTrap::ScavTrap&	operator=(const ScavTrap& obj)
+ScavTrap&	ScavTrap::operator=(const ScavTrap& obj)
 {
 	this->_name = obj._name;
 	this->_health = obj._health;

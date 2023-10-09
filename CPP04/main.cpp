@@ -1,6 +1,7 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
 #include <iostream>
 
 int main()
@@ -9,7 +10,9 @@ int main()
 	const Animal	*h = new Animal("Horse");
 	const Animal	*d = new Dog();
 	const Animal	*c = new Cat();
-		
+	
+	const WrongAnimal	*w = new WrongAnimal("Petaurus");
+
 	std::cout << "----------" << std::endl;
 	std::cout << "----------" << std::endl;
 	std::cout << p->getType() << " ";
@@ -27,6 +30,13 @@ int main()
 	std::cout << c->getType() << " ";
 	c->makeSound();
 	std::cout << std::endl;
+
+	std::cout << "----------" << std::endl;	
+	std::cout << w->getType() << " ";
+	w->makeSound();
+	std::cout << std::endl;
+	
+
 	
 	return (0);
 }

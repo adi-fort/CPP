@@ -102,4 +102,6 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_health < 10)
 		this->setHealth(this->getHealth() + amount);
+	if (this->_health > 10)
+		this->_health = 10;
 }

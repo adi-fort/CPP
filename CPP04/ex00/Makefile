@@ -1,4 +1,4 @@
-NAME	= Brain
+NAME	= Animal
 
 SRC		= $(wildcard *.cpp)
 

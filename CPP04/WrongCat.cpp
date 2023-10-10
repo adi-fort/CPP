@@ -1,13 +1,18 @@
-#include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat(std::string name)
-{}
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
+{
+	std::cout << "Wrong cat created";
+	std::cout << std::endl;
+}
 
 WrongCat::~WrongCat()
-{}
+{
+	std::cout << "Wrong cat destroyed";
+	std::cout << std::endl;
+}
 
-WrongCat::WrongCat(const WrongCat& obj)
+WrongCat::WrongCat(const WrongCat& obj) : WrongAnimal(obj)
 {
 	*this = obj;
 }
@@ -18,7 +23,7 @@ WrongCat&	WrongCat::operator=(const WrongCat& obj)
 	return (*this);
 }
 
-void	makeSound() const
+void	WrongCat::makeSound() const
 {
 	std::cout << "WrongMeows" << std::endl;
 }

@@ -8,6 +8,8 @@ Dog::Dog() : Animal("Dog")
 
 Dog::~Dog()
 {
+	std::cout << "Dog destroyed";
+	std::cout << std::endl;
 }
 
 Dog::Dog(const Dog& obj) : Animal(obj)

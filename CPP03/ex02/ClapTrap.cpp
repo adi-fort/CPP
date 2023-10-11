@@ -3,28 +3,28 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << "ClapTrap created" << std::endl;
 	this->setName(name);
-	this->setHealth(100);
-	this->setEnergy(100);
-	this->setDamage(30);
+	this->setHealth(10);
+	this->setEnergy(10);
+	this->setDamage(0);
 }
 
 ClapTrap::ClapTrap(ClapTrap& obj)
 {
-	std::cout << "Default copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 	this->_name = obj.getName();
 	*this = obj;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Default destructor called" << std::endl;
+	std::cout << "ClapTrap destroyed" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& obj)
@@ -100,6 +100,5 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_health < 10)
-		this->setHealth(this->getHealth() + amount);
+	this->setHealth(this->getHealth() + amount);
 }

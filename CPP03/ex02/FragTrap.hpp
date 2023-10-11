@@ -4,7 +4,7 @@
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 
-class	FragTrap : private ClapTrap
+class	FragTrap : public ClapTrap
 {
 	public:
 		FragTrap();
@@ -14,6 +14,7 @@ class	FragTrap : private ClapTrap
 		~FragTrap();
 		
 		void	highFivesGuys();
+		void	attack(const std::string& target);
 };
 
 #endif

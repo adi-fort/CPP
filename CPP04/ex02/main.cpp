@@ -10,7 +10,7 @@ int main()
 {	
 	Brain b = Brain();
 	Brain c = Brain();
-	//Animal	animale();
+//	Animal	animale();
 	
 	b.setIdea("ciao", 0);
 	std::cout << b.getIdea(0);

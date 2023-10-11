@@ -6,15 +6,15 @@
 int main()
 {
 	ClapTrap andrea("andrea");
+	std::cout << "------------------" << std::endl;
 	ClapTrap mario("mario");
+	std::cout << "------------------" << std::endl;
 	ScavTrap daniele("daniele");
+	std::cout << "------------------" << std::endl;
 	FragTrap giovanni("giovanni");
+	std::cout << "------------------" << std::endl;
 
 	andrea.attack(mario.getName());
-	//mario.setHealth(mario.getHealth() - 3);
-	//andrea.setEnergy(andrea.getEnergy());
-	//mario.beRepaired(1);
-	std::cout << andrea.getEnergy() << std::endl << mario.getHealth() << std::endl;
 	daniele.guardGate();
 	daniele.attack("everybody");
 	giovanni.attack("nobody");

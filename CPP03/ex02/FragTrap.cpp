@@ -8,7 +8,10 @@ FragTrap::FragTrap()
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "FragTrap created" << std::endl;
-	this->_name = name;
+	this->setName(_name);
+	this->setHealth(100);
+	this->setEnergy(100);
+	this->setDamage(30);
 }
 
 FragTrap::~FragTrap()
@@ -32,12 +35,14 @@ FragTrap&	FragTrap::operator=(const FragTrap& obj)
 
 void	FragTrap::attack(const std::string& target)
 {
-	std::cout << this->_name << " attacks " << target << std::endl;
+	std::cout << this->_name << " attacks " << target;
+	std::cout << " causing points of damage: " << this->_damage << std::endl;
+	this->_energy--;
 }
 
 void	FragTrap::highFivesGuys()
 {
 	std::cout << this->_name; 
-	std::cout << " wanna high fives babe!";
+	std::cout << " wanna high five!";
 	std::cout << std::endl;
 }

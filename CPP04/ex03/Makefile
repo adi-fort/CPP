@@ -1,6 +1,6 @@
 NAME	= Interface
 
-SRC:	= $(wildcard *.cpp)
+SRC:	= $(wildcard*.cpp)
 
 CC		= c++
 

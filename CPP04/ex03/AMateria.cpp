@@ -24,6 +24,11 @@ AMateria&	AMateria::operator=(const AMateria& obj)
 	return (*this);
 }
 
+void	setType(std::string type)
+{
+	this->type = type;
+}
+
 std::string const&	AMateria::getType() const
 {
 	return (*this->_type);

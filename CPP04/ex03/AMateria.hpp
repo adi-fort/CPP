@@ -12,6 +12,7 @@ class	AMateria
 		AMateria(const AMateria& obj);
 		AMateria&	operator=(const AMateria& obj);
 
+		void	setType(std::string type);
 		std::string	const& getType() const; //returns the materia type
 
 		virtual AMateria*	clone() const = 0;
